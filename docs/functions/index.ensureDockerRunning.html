@@ -24,20 +24,21 @@
 <p>Notes on docker startup command:</p>
 <ul>
 <li>May require entering a password</li>
-<li>On Windows with Docker Desktop it will run <code>Start-Process &quot;C:\Program Files\Docker\Docker\Docker Desktop.exe&quot;</code></li>
-<li>On Windows without Docker Desktop it will run <code>wsl -u root -e sh -c &quot;service docker start&quot;</code></li>
-<li>On Linux it will run <code>sudo systemctl start docker</code></li>
+<li>On Windows with Docker Desktop and from within powershell or cmd it will run in powershell: <code>Start-Process &quot;C:\Program Files\Docker\Docker\Docker Desktop.exe&quot; -NoNewWindow</code></li>
+<li>On Windows without Docker Desktop from within powershell or cmd it will run: <code>sudo service docker start</code></li>
+<li>On Linux (including WSL) it will run: <code>sudo systemctl start docker</code></li>
 <li>Not currently supported on Mac</li>
+<li>If you&#39;re on Windows and have Docker Desktop but it is stopped and you&#39;re in a WSL shell, docker will appear as if it&#39;s not installed and this method will throw</li>
 </ul>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 <div class="tsd-comment tsd-typography">
 <h4>Throws</h4><p>An Error If docker is not detected on the system.</p>
 
-<h4>Throws</h4><p>An Error if docker is detected as installed and not running but the system is not Windows or Linux.</p>
+<h4>Throws</h4><p>An Error if docker is detected as installed and not running but the OS is Mac.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/mikey-t/node-cli-utils/blob/6f5d105/src/generalUtils.ts#L727">generalUtils.ts:727</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/mikey-t/node-cli-utils/blob/ba15e6c/src/generalUtils.ts#L728">generalUtils.ts:728</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
