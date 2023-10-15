@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>sleep | @mikeyt23/node-cli-utils</title><meta name="description" content="Documentation for @mikeyt23/node-cli-utils"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css?cache=1697405819265"/><link rel="stylesheet" href="../assets/highlight.css?cache=1697405819265"/><script defer src="../assets/main.js?cache=1697405819265"></script><script async src="../assets/search.js?cache=1697405819265" id="tsd-search-script"></script><script async src="../assets/navigation.js?cache=1697405819265" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>getRequiredCliParam | @mikeyt23/node-cli-utils</title><meta name="description" content="Documentation for @mikeyt23/node-cli-utils"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css?cache=1697405819265"/><link rel="stylesheet" href="../assets/highlight.css?cache=1697405819265"/><script defer src="../assets/main.js?cache=1697405819265"></script><script async src="../assets/search.js?cache=1697405819265" id="tsd-search-script"></script><script async src="../assets/navigation.js?cache=1697405819265" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
@@ -14,27 +14,33 @@
 <ul class="tsd-breadcrumb">
 <li><a href="../index.html">@mikeyt23/node-cli-utils</a></li>
 <li><a href="../modules/index.html">index</a></li>
-<li><a href="index.sleep.html">sleep</a></li></ul>
-<h1>Function sleep</h1></div>
+<li><a href="index.getRequiredCliParam.html">getRequiredCliParam</a></li></ul>
+<h1>Function getRequiredCliParam</h1></div>
 <section class="tsd-panel">
 <ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="sleep"><span class="tsd-kind-call-signature">sleep</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">ms</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#sleep" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="getRequiredCliParam"><span class="tsd-kind-call-signature">get<wbr/>Required<wbr/>Cli<wbr/>Param</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">argvIndex</span>, <span class="tsd-kind-parameter">errorMessage</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#getRequiredCliParam" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Sleeps for the specified number of milliseconds.</p>
+<div class="tsd-comment tsd-typography"><p>Get&#39;s the value for the CLI param at process.argv[<code>argvIndex</code>] and throws the specified optional <code>errorMessage</code>
+or a default error message if the CLI arg is missing.</p>
+<p>Notes on common index position values:</p>
+<ul>
+<li><code>0</code>: NodeJS path</li>
+<li><code>1</code>: Script path</li>
+<li><code>2</code>: First script param - for <code>swig</code> this will be the task name</li>
+</ul>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5><span class="tsd-kind-parameter">ms</span>: <span class="tsd-signature-type">number</span></h5>
-<div class="tsd-comment tsd-typography"><p>The number of milliseconds to sleep</p>
-</div>
+<h5><span class="tsd-kind-parameter">argvIndex</span>: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">errorMessage</span>: <span class="tsd-signature-type">string</span></h5>
 <div class="tsd-comment tsd-typography"></div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><p>A Promise that resolves after the specified number of milliseconds</p>
-
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/mikey-t/node-cli-utils/blob/f594095/src/generalUtils.ts#L129">generalUtils.ts:129</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/mikey-t/node-cli-utils/blob/f594095/src/generalUtils.ts#L1147">generalUtils.ts:1147</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

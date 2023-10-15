@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>sleep | @mikeyt23/node-cli-utils</title><meta name="description" content="Documentation for @mikeyt23/node-cli-utils"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css?cache=1697405819265"/><link rel="stylesheet" href="../assets/highlight.css?cache=1697405819265"/><script defer src="../assets/main.js?cache=1697405819265"></script><script async src="../assets/search.js?cache=1697405819265" id="tsd-search-script"></script><script async src="../assets/navigation.js?cache=1697405819265" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>conditionallyAsync | @mikeyt23/node-cli-utils</title><meta name="description" content="Documentation for @mikeyt23/node-cli-utils"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css?cache=1697405819265"/><link rel="stylesheet" href="../assets/highlight.css?cache=1697405819265"/><script defer src="../assets/main.js?cache=1697405819265"></script><script async src="../assets/search.js?cache=1697405819265" id="tsd-search-script"></script><script async src="../assets/navigation.js?cache=1697405819265" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
@@ -14,27 +14,80 @@
 <ul class="tsd-breadcrumb">
 <li><a href="../index.html">@mikeyt23/node-cli-utils</a></li>
 <li><a href="../modules/index.html">index</a></li>
-<li><a href="index.sleep.html">sleep</a></li></ul>
-<h1>Function sleep</h1></div>
+<li><a href="index.conditionallyAsync.html">conditionallyAsync</a></li></ul>
+<h1>Function conditionallyAsync</h1></div>
 <section class="tsd-panel">
 <ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="sleep"><span class="tsd-kind-call-signature">sleep</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">ms</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#sleep" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="conditionallyAsync"><span class="tsd-kind-call-signature">conditionally<wbr/>Async</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">condition</span>, <span class="tsd-kind-parameter">asyncFunc</span>, <span class="tsd-kind-parameter">logEnabled</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span><a href="#conditionallyAsync" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Sleeps for the specified number of milliseconds.</p>
+<div class="tsd-comment tsd-typography"><p>Executes an asynchronous function conditionally.</p>
 </div>
+<section class="tsd-panel">
+<h4>Type Parameters</h4>
+<ul class="tsd-type-parameter-list">
+<li>
+<h4><span class="tsd-kind-type-parameter">T</span></h4>
+<div class="tsd-comment tsd-typography"><p>The type of value that the <code>asyncFunc</code> returns.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></section>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5><span class="tsd-kind-parameter">ms</span>: <span class="tsd-signature-type">number</span></h5>
-<div class="tsd-comment tsd-typography"><p>The number of milliseconds to sleep</p>
+<h5><span class="tsd-kind-parameter">condition</span>: <span class="tsd-signature-type">boolean</span></h5>
+<div class="tsd-comment tsd-typography"><p>A boolean that determines if the <code>asyncFunc</code> should be executed.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">asyncFunc</span>: <a href="../types/testUtils._internal_.AsyncFunc.html" class="tsd-signature-type tsd-kind-type-alias">AsyncFunc</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+<div class="tsd-comment tsd-typography"><p>The async function to execute if the condition is true.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">logEnabled</span>: <span class="tsd-signature-type">boolean</span></h5>
+<div class="tsd-comment tsd-typography"><p>Optional. Determines whether to enable logging. Defaults to <code>false</code>.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><p>A Promise that resolves after the specified number of milliseconds</p>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4><p>Returns a Promise resolving to the value returned by <code>asyncFunc</code> if the condition is true, otherwise returns <code>undefined</code>.</p>
 
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/mikey-t/node-cli-utils/blob/f594095/src/generalUtils.ts#L129">generalUtils.ts:129</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/mikey-t/node-cli-utils/blob/f594095/src/generalUtils.ts#L1174">generalUtils.ts:1174</a></li></ul></aside></li>
+<li class="tsd-signature tsd-anchor-link" id="conditionallyAsync-1"><span class="tsd-kind-call-signature">conditionally<wbr/>Async</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">conditionAsyncFunc</span>, <span class="tsd-kind-parameter">asyncFunc</span>, <span class="tsd-kind-parameter">logEnabled</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span><a href="#conditionallyAsync-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Executes an asynchronous function conditionally.</p>
+</div>
+<section class="tsd-panel">
+<h4>Type Parameters</h4>
+<ul class="tsd-type-parameter-list">
+<li>
+<h4><span class="tsd-kind-type-parameter">T</span></h4>
+<div class="tsd-comment tsd-typography"><p>The type of value that the <code>asyncFunc</code> returns.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></section>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">conditionAsyncFunc</span>: <a href="../types/testUtils._internal_.AsyncBooleanFunc.html" class="tsd-signature-type tsd-kind-type-alias">AsyncBooleanFunc</a></h5>
+<div class="tsd-comment tsd-typography"><p>An async function that returns a boolean that determines whether <code>asyncFunc</code> should be executed.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">asyncFunc</span>: <a href="../types/testUtils._internal_.AsyncFunc.html" class="tsd-signature-type tsd-kind-type-alias">AsyncFunc</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+<div class="tsd-comment tsd-typography"><p>The async function to execute if the condition is true.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">logEnabled</span>: <span class="tsd-signature-type">boolean</span></h5>
+<div class="tsd-comment tsd-typography"><p>Optional. Determines whether to enable logging. Defaults to <code>false</code>.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4><p>Returns a Promise resolving to the value returned by <code>asyncFunc</code> if the condition is true, otherwise returns <code>undefined</code>.</p>
+
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/mikey-t/node-cli-utils/blob/f594095/src/generalUtils.ts#L1186">generalUtils.ts:1186</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
