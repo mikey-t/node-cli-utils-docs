@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>dotnetEfCommand | @mikeyt23/node-cli-utils</title><meta name="description" content="Documentation for @mikeyt23/node-cli-utils"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css?cache=1699378173254"/><link rel="stylesheet" href="../assets/highlight.css?cache=1699378173254"/><script defer src="../assets/main.js?cache=1699378173254"></script><script async src="../assets/search.js?cache=1699378173254" id="tsd-search-script"></script><script async src="../assets/navigation.js?cache=1699378173254" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>hasOnlyDigits | @mikeyt23/node-cli-utils</title><meta name="description" content="Documentation for @mikeyt23/node-cli-utils"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css?cache=1700957434629"/><link rel="stylesheet" href="../assets/highlight.css?cache=1700957434629"/><script defer src="../assets/main.js?cache=1700957434629"></script><script async src="../assets/search.js?cache=1700957434629" id="tsd-search-script"></script><script async src="../assets/navigation.js?cache=1700957434629" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
@@ -13,43 +13,24 @@
 <div class="tsd-page-title">
 <ul class="tsd-breadcrumb">
 <li><a href="../index.html">@mikeyt23/node-cli-utils</a></li>
-<li><a href="../modules/dbMigrationUtils.html">dbMigrationUtils</a></li>
-<li><a href="dbMigrationUtils.dotnetEfCommand.html">dotnetEfCommand</a></li></ul>
-<h1>Function dotnetEfCommand</h1></div>
+<li><a href="../modules/index.html">index</a></li>
+<li><a href="index.hasOnlyDigits.html">hasOnlyDigits</a></li></ul>
+<h1>Function hasOnlyDigits</h1></div>
 <section class="tsd-panel">
 <ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="dotnetEfCommand"><span class="tsd-kind-call-signature">dotnet<wbr/>Ef<wbr/>Command</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">projectPath</span>, <span class="tsd-kind-parameter">dbContextName</span>, <span class="tsd-kind-parameter">args</span>, <span class="tsd-kind-parameter">noBuild</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><a href="#dotnetEfCommand" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="hasOnlyDigits"><span class="tsd-kind-call-signature">has<wbr/>Only<wbr/>Digits</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">value</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#hasOnlyDigits" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Wrapper function for <code>dotnet ef</code>. If you don&#39;t pass <code>false</code> for <code>noBuild</code>, be sure the project has already been built by some other means.</p>
-<p>Docs for &quot;dotnet ef&quot; CLI: <a href="https://learn.microsoft.com/en-us/ef/core/cli/dotnet">https://learn.microsoft.com/en-us/ef/core/cli/dotnet</a>.</p>
+<div class="tsd-comment tsd-typography"><p>Returns <code>true</code> if <code>value</code> is a string that contains only digits (regex used: <code>/^\d+$/</code>).</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5><span class="tsd-kind-parameter">projectPath</span>: <span class="tsd-signature-type">string</span></h5>
-<div class="tsd-comment tsd-typography"><p>Path to project that has the DbContext and Migration files used for the <code>--project</code> argument</p>
-</div>
-<div class="tsd-comment tsd-typography"></div></li>
-<li>
-<h5><span class="tsd-kind-parameter">dbContextName</span>: <span class="tsd-signature-type">string</span></h5>
-<div class="tsd-comment tsd-typography"><p>The name of the DbContext class used for the <code>--context</code> argument</p>
-</div>
-<div class="tsd-comment tsd-typography"></div></li>
-<li>
-<h5><span class="tsd-kind-parameter">args</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-<div class="tsd-comment tsd-typography"><p>Arguments to pass to the <code>dotnet ef</code> CLI</p>
-</div>
-<div class="tsd-comment tsd-typography"></div></li>
-<li>
-<h5><span class="tsd-kind-parameter">noBuild</span>: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
-<div class="tsd-comment tsd-typography"><p>If true, the <code>--no-build</code> argument will be passed to the <code>dotnet ef</code> CLI (default: true)</p>
-</div>
-<div class="tsd-comment tsd-typography"></div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<h5><span class="tsd-kind-parameter">value</span>: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/mikey-t/node-cli-utils/blob/1c9339e/src/dbMigrationUtils.ts#L15">dbMigrationUtils.ts:15</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/mikey-t/node-cli-utils/blob/a1f3ae1/src/generalUtils.ts#L1323">generalUtils.ts:1323</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -64,7 +45,6 @@
 <li><a href="../modules/DependencyChecker.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2"></use></svg>DependencyChecker</a></li>
 <li><a href="../modules/NodeCliUtilsConfig.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2"></use></svg>NodeCliUtilsConfig</a></li>
 <li><a href="../modules/certUtils.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2"></use></svg>certUtils</a></li>
-<li><a href="../modules/dbMigrationUtils.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2"></use></svg>dbMigrationUtils</a></li>
 <li><a href="../modules/dotnetUtils.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2"></use></svg>dotnetUtils</a></li>
 <li><a href="../modules/hostFileUtils.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2"></use></svg>hostFileUtils</a></li>
 <li><a href="../modules/index.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2"></use></svg>index</a></li>
